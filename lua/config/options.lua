@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local indent = 2
+
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
@@ -17,11 +19,11 @@ vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
 vim.wo.colorcolumn = "120"
 -- 缩进4个空格等于一个Tab
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = indent
+vim.o.shiftwidth = indent
 -- >> << 时移动长度
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
+vim.o.shiftwidth = indent
+vim.bo.shiftwidth = indent
 -- 新行对齐当前行
 vim.o.autoindent = true
 vim.bo.autoindent = true
