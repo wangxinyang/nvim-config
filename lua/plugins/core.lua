@@ -19,4 +19,13 @@ return {
         })
     end
   },
+  "folke/persistence.nvim",
+  {
+		"windwp/nvim-autopairs",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	},
+  { "onsails/lspkind.nvim", event = "VeryLazy" },
 }

@@ -13,9 +13,9 @@ return {
 	keys = {
 		-- short
 		{ "<leader>,", Util.tele_builtin("buffers", { show_all_buffers = true }), desc = "Switch Buffer" },
-		{ "<leader>/", Util.tele_builtin("live_grep"), desc = "Find in Files (Grep)" },
 		{ "<leader>:", Util.tele_builtin("command_history"), desc = "Command History" },
-		{ "<leader><space>", Util.tele_builtin("find_files"), desc = "Find Files (root dir)" },
+		{ "<leader>p", Util.tele_builtin("find_files"), desc = "Find Files (root dir)" },
+		{ "<leader>P", Util.tele_builtin("live_grep"), desc = "Find in Files (Grep)" },
 		-- git
 		{ "<leader>fgc", Util.tele_builtin("git_commits"), desc = "commits" },
 		{ "<leader>fgs", Util.tele_builtin("git_status"), desc = "status" },
