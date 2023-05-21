@@ -1,5 +1,6 @@
 return {
   {
+    event = "VeryLazy",
     "jcdickinson/wpm.nvim",
     config = function()
         require("wpm").setup({})
@@ -8,6 +9,7 @@ return {
   -- auto-session
   "rmagatti/auto-session",
   {
+    event = "VeryLazy",
     "akinsho/bufferline.nvim",
     config = function()
         require("bufferline").setup({
@@ -19,7 +21,10 @@ return {
         })
     end
   },
-  "folke/persistence.nvim",
+  {
+    event = "VeryLazy",
+    "folke/persistence.nvim",
+  },
   {
 		"windwp/nvim-autopairs",
 		event = "VeryLazy",
@@ -28,4 +33,18 @@ return {
 		end,
 	},
   { "onsails/lspkind.nvim", event = "VeryLazy" },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+		event = "VeryLazy",
+		config = function()
+			local null_ls = require("null-ls")
+      null_ls.setup({
+          sources = {
+              null_ls.builtins.formatting.stylua,
+              null_ls.builtins.diagnostics.eslint,
+              null_ls.builtins.completion.spell,
+          },
+      })
+		end,
+  },
 }

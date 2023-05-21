@@ -1,6 +1,9 @@
 return {
-	{ "MunifTanjim/nui.nvim" },
-	{ "nvim-tree/nvim-web-devicons" },
+	{ 
+		event = "VeryLazy",
+		"MunifTanjim/nui.nvim" 
+	},
+	{ event = "VeryLazy", "nvim-tree/nvim-web-devicons" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },

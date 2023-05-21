@@ -1,5 +1,6 @@
 return {
 	{
+		event = "VeryLazy",
 		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
 		keys = {

@@ -107,3 +107,9 @@ map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
+--自动更新crates
+map("n", "<leader>ru", 
+		function ()
+			require("crates").upgrade_all_crates()
+		end, 
+opt)

@@ -82,6 +82,7 @@ return {
 					{ name = "nvim_lua" },
 					-- disable fuzzy
 					-- { name = "dictionary", priority = 10, max_item_count = 5, keyword_length = 5 },
+					{ name = "crates" },
 				},
 			})
 
