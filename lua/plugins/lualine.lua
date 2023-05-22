@@ -28,7 +28,7 @@ return {
             lualine_a = {
               "mode",
             },
-            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_b = { "branch", "diff", "diaGgnostics" },
             -- show the current filename and session name,
             lualine_c = { "filename", require('auto-session.lib').current_session_name },
             lualine_x = { "encoding", "fileformat", "filetype", require("wpm").wpm, require("wpm").historic_graph },

@@ -7,7 +7,7 @@ return {
     end
   },
   -- auto-session
-  "rmagatti/auto-session",
+  -- "rmagatti/auto-session",
   {
     event = "VeryLazy",
     "akinsho/bufferline.nvim",

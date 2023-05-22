@@ -8,3 +8,5 @@ vim.api.nvim_create_autocmd('User', {
 		require("config.mappings")
   	end,
 })
+
+require("config.start")
