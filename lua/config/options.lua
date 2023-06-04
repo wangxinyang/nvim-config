@@ -69,7 +69,9 @@ vim.opt.termguicolors = true
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
-vim.api.nvim_set_option('updatetime', 300) 
+vim.api.nvim_set_option('updatetime', 300)
+-- buffer line
+vim.opt.termguicolors = true
 -- 补全最多显示10行
 vim.o.pumheight = 10
 -- 永远显示 tabline

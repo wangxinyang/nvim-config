@@ -35,12 +35,12 @@ map({ "n", "v", "o" }, "H", "^", opt)
 map({ "n", "v", "o" }, "L", "$", opt)
 
 -- move Lines
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+map("n", "<S-DOWN>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<S-UP>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<S-DOWN>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<S-UP>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<S-DOWN>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<S-UP>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- search
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -84,9 +84,13 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
+-- bufferline 左右Tab切换
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+
 -- 左右比例控制
-map("n", "<C-h>", ":vertical resize -2<CR>", opt)
-map("n", "<C-l>", ":vertical resize +2<CR>", opt)
+--map("n", "<C-h>", ":vertical resize -2<CR>", opt)
+--map("n", "<C-l>", ":vertical resize +2<CR>", opt)
 map("n", "s,", ":vertical resize -20<CR>", opt)
 map("n", "s.", ":vertical resize +20<CR>", opt)
 -- 上下比例
