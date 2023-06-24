@@ -111,9 +111,14 @@ map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
+ -- diagnostic
+map("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+map("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+map("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+
 --自动更新crates
-map("n", "<leader>ru", 
+map("n", "<leader>ru",
 		function ()
 			require("crates").upgrade_all_crates()
-		end, 
+		end,
 opt)
