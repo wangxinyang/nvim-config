@@ -6,6 +6,10 @@ return {
         require("wpm").setup({})
     end
   },
+	{
+		event = "VeryLazy",
+		"moll/vim-bbye",
+	},
   -- auto-session
   -- "rmagatti/auto-session",
   {
@@ -14,12 +18,19 @@ return {
     config = function()
         require("bufferline").setup({
             options = {
-                mode = "buffer",
+                mode = "buffers",
                 -- 显示id
-                number = "ordinal"
+                number = "buffer_id | ordinal",
+						    buffer_close_icon = '󰅖',
+                modified_icon = '●',
+					      show_buffer_icons = true,
+                always_show_bufferline = true,
             }
         })
-    end
+    end,
+		dependencies = {
+			"moll/vim-bbye",
+		}
   },
   {
     event = "VeryLazy",

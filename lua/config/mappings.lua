@@ -116,6 +116,17 @@ map("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
 map("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
 map("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
 
+-- Terminal相关
+map("n", "<leader>t", ":sp | terminal<CR>", opt)
+map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+map("t", "<Esc>", "<C-\\><C-n>", opt)
+
+-- 关闭
+map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
 --自动更新crates
 map("n", "<leader>ru",
 		function ()
