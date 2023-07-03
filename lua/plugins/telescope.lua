@@ -1,6 +1,7 @@
 local Util = require("util")
 
 return {
+	{
 	event = "VeryLazy",
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
@@ -10,6 +11,7 @@ return {
 		-- "nvim-telescope/telescope-file-browser.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"tsakirist/telescope-lazy.nvim",
+		"kkharji/sqlite.lua",
 	},
 	keys = {
 		-- short
@@ -123,5 +125,10 @@ return {
 		for _, extn in ipairs(extns) do
 			telescope.load_extension(extn)
 		end
-	end,
+	end
+	},
+	{
+		event = "VeryLazy",
+    "kkharji/sqlite.lua", 
+	},
 }
