@@ -127,6 +127,12 @@ map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
+-- Trouble
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
+
+-- Tagbar 
+map("n", "<leader>xb", "<cmd>TagbarToggle<cr>", opt)
+
 --自动更新crates
 map("n", "<leader>ru",
 		function ()

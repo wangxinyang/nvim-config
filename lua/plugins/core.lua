@@ -58,4 +58,53 @@ return {
       })
 		end,
   },
+	{
+		event = "InsertEnter",
+		"folke/todo-comments.nvim",
+  	dependencies = { "nvim-lua/plenary.nvim" },
+  	opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  	}
+  },
+	{
+		event = "VeryLazy",
+ 		"folke/trouble.nvim",
+ 		dependencies = { "nvim-tree/nvim-web-devicons" },
+ 		opts = {
+  		-- your configuration comes here
+  		-- or leave it empty to use the default settings
+  		-- refer to the configuration section below
+ 		}
+	},
+	{
+		event = "VeryLazy",
+ 		"preservim/tagbar"
+	},
+	{
+    event = "VeryLazy",
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+        require("indent_blankline").setup({
+					show_end_of_line = true,
+			    space_char_blankline = " ",
+				})
+    end
+  },
+	{
+		event = "VeryLazy",
+		"numToStr/Comment.nvim",
+  	opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+			toggler = {
+        ---Line-comment toggle keymap
+        line = 'lc',
+        ---Block-comment toggle keymap
+        block = 'gbc',
+    },
+  	}
+  },
 }
