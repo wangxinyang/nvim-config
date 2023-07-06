@@ -133,6 +133,10 @@ map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
 -- Tagbar 
 map("n", "<leader>xb", "<cmd>TagbarToggle<cr>", opt)
 
+-- go to definition
+map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+map("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+
 --自动更新crates
 map("n", "<leader>ru",
 		function ()
