@@ -1,6 +1,6 @@
 local function map(mode, lhs, rhs, opts)
 	local keys = require("lazy.core.handler").handlers.keys
-	---@cast keys LazyKeysHandler
+	--@cast keys LazyKeysHandler
 	-- do not create the keymap if a lazy keys handler exists
 	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
 		opts = opts or {}
@@ -134,8 +134,12 @@ map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
 map("n", "<leader>xb", "<cmd>TagbarToggle<cr>", opt)
 
 -- go to definition
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
 map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 map("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 
 --自动更新crates
 map("n", "<leader>ru",
