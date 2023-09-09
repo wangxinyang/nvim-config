@@ -66,7 +66,8 @@ require("mason-lspconfig").setup_handlers({
 	-- and will be called for each installed server that doesn't have
 	-- a dedicated handler.
 	function (server_name) -- default handler (optional)
-		local highlight_variable = function(client, bufnr)
+		local opts = {}
+		opts.on_attach = function(client, bufnr)
 			if client.server_capabilities.documentHighlightProvider then
 				-- if client.supports_method "textDocument/documentHighlight" then
 				vim.cmd [[
@@ -92,12 +93,11 @@ require("mason-lspconfig").setup_handlers({
 			end
 		end
 
-		local opts = {
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	--[[ 	local opts = {
 			on_attach = function(client, bufnr)
 				highlight_variable(client, bufnr)
 			end,
-		}
+		} ]]
 		require("lspconfig")[server_name].setup(opts)
 	end,
 	-- Next, you can provide targeted overrides for specific servers.
