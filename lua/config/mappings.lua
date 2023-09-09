@@ -140,6 +140,7 @@ map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 map("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+map("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 
 --自动更新crates
 map("n", "<leader>ru",

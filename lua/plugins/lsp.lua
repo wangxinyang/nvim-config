@@ -23,8 +23,8 @@ return  {
 		event = "VeryLazy",
 		"williamboman/mason.nvim",
 	},
-    { 
+    {
         event = "VeryLazy",
-        "williamboman/mason-lspconfig.nvim", 
+        "williamboman/mason-lspconfig.nvim",
     },
 }
