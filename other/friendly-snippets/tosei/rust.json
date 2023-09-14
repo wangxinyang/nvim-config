@@ -2,14 +2,16 @@
 	"jtest": {
 		"prefix": "jtest",
 		"body": [
+			"// region:    ---Tests",
 			"#[cfg(test)]",
 			"mod tests {",
 			"    #![allow(unused)]",
 			"    use super::*;",
 			"    use anyhow::Result;",
+			"${1}",
 			"",
-			"",
-			"}"
+			"}",
+			"// endregion: ---Tests"
 		],
 		"description": "jtest"
 	}
