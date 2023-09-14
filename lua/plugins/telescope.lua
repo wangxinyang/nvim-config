@@ -129,6 +129,6 @@ return {
 	},
 	{
 		event = "VeryLazy",
-    "kkharji/sqlite.lua", 
+    "kkharji/sqlite.lua",
 	},
 }

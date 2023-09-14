@@ -1,0 +1,16 @@
+{
+	"jtest": {
+		"prefix": "jtest",
+		"body": [
+			"#[cfg(test)]",
+			"mod tests {",
+			"    #![allow(unused)]",
+			"    use super::*;",
+			"    use anyhow::Result;",
+			"",
+			"",
+			"}"
+		],
+		"description": "jtest"
+	}
+}
