@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local indent = 2
+local indent = 4 
 
 -- utf8
 vim.g.encoding = "UTF-8"
@@ -24,6 +24,9 @@ vim.o.shiftwidth = indent
 -- >> << 时移动长度
 vim.o.shiftwidth = indent
 vim.bo.shiftwidth = indent
+-- 空格替代tab
+vim.o.expandtab = true
+vim.bo.expandtab = true
 -- 新行对齐当前行
 vim.o.autoindent = true
 vim.bo.autoindent = true
