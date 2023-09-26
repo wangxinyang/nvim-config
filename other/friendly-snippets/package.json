@@ -140,7 +140,7 @@
                 "language": "rust",
                 "path": "./snippets/rust/rust.json"
             },
-			 			{
+            {
                 "language": "rust",
                 "path": "./tosei/rust.json"
             },

@@ -1,5 +1,25 @@
 {
-	"jtest": {
+	"region": {
+		"prefix": "region",
+		"body": [
+			"// region:    --- ${1:section}",
+			"",
+			"// endregion: --- ${1:section}"
+		],
+		"description": "region"
+	},
+    "iefrom": {
+		"prefix": "iefrom",
+		"body": [
+			"impl From<${1:module}::Error> for Error {",
+			"   fn from(val: ${1:module}::Error) -> Self {",
+			"       Self::${2:Variant}(val)",
+            "   }",
+			"}"
+		],
+		"description": "implement module error for Error"
+	},
+    "jtest": {
 		"prefix": "jtest",
 		"body": [
 			"// region:    ---Tests",
@@ -39,7 +59,7 @@
             "impl std::error::Error for Error {}",
 			"// endregion: --- Error Boilerplate"
 		],
-		"description": "jtest"
+		"description": "jerr"
 
 	}
 }
