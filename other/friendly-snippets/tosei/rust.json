@@ -19,6 +19,18 @@
 		],
 		"description": "implement module error for Error"
 	},
+    "itfrom": {
+		"prefix": "itfrom",
+		"body": [
+			"impl TryFrom<${1:FromType}> for ${2:ToType} {",
+			"   type Error = Error;",
+			"   fn try_from(val: ${1:FromType}) -> Result<${2:ToType}> {",
+			"",
+            "   }",
+			"}"
+		],
+		"description": "implement tryfrom trait"
+	},
     "jtest": {
 		"prefix": "jtest",
 		"body": [
