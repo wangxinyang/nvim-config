@@ -11,7 +11,7 @@ require("mason").setup({
 	},
 })
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
 end
@@ -36,7 +36,8 @@ M.capabilities.textDocument.completion.completionItem = {
 	},
   }
 
-require("lspconfig").lua_ls.setup(
+local lspconfig = require("lspconfig")
+lspconfig.lua_ls.setup(
 	{
 		capabilities = M.capabilities,
 		settings = {
@@ -70,6 +71,21 @@ require("lspconfig").lua_ls.setup(
 			},
 		},
 	}
+)
+
+lspconfig.gopls.setup (
+    {
+        capabilities = M.capabilities,
+        settings = {
+            gopls = {
+                analyses = {
+                    unusedparams = true,
+                },
+                completeUnimported = true,
+                usePlaceholders = true,
+            },
+        },
+    }
 )
 
 return M

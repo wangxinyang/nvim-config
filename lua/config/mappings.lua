@@ -1,12 +1,15 @@
 local function map(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	--@cast keys LazyKeysHandler
-	-- do not create the keymap if a lazy keys handler exists
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+    local keys = require("lazy.core.handler").handlers.keys
+    --@cast keys LazyKeysHandler
+    -- do not create the keymap if a lazy keys handler exists
+    if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+        opts = opts or {}
+        opts.silent = opts.silent ~= false
+        if opts.remap and not vim.g.vscode then
+            opts.remap = nil
+        end
+        vim.keymap.set(mode, lhs, rhs, opts)
+    end
 end
 
 --local map = vim.api.nvim_set_keymap
@@ -135,12 +138,19 @@ map("n", "<leader>xb", "<cmd>TagbarToggle<cr>", opt)
 
 -- go to definition
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-map("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 map("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+
+-- golang quick keymap
+map("n", "<leader>taj", "<cmd>GoTagAdd json<CR>",  {desc = "Golang Tag Add json"})
+map("n", "<leader>tay", "<cmd>GoTagAdd yaml<CR>",  {desc = "Golang Tag Add yaml"})
+map("n", "<leader>ae", "<cmd>GoIfErr<CR>",  {desc = "Golang Add errr snippet"})
+map("n", "<leader>aft", "<cmd>GoTestAdd<CR>",  {desc = "Golang Add one function test"})
+map("n", "<leader>ats", "<cmd>GoTestsAll<CR>",  {desc = "Golang Add all function tests"})
 
 --自动更新crates
 map("n", "<leader>ru",
