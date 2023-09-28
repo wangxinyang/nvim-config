@@ -19,10 +19,7 @@ return {
             require("rust-tools").setup(opts)
         end
     },
-    {
-        event = "VeryLazy",
-        "mfussenegger/nvim-dap"
-    },
+
     {
         "Saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },

@@ -19,6 +19,14 @@ return  {
             require("plugins.configs.lspconfig")
         end
     },
+    --  暂时不使用eslint，使用biome
+--[[     {
+        event = "VeryLazy",
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("plugins.configs.lint")
+        end
+    }, ]]
     {
         event = "VeryLazy",
         "williamboman/mason.nvim",
@@ -27,8 +35,9 @@ return  {
                 "lua_ls",
                 "gopls",
                 "rust_analyzer",
-                "sqlls",
-                "html",
+                -- "eslint-lsp",
+                "typescript-language-server",
+                "biome",
             },
         },
     },

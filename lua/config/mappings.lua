@@ -152,6 +152,10 @@ map("n", "<leader>ae", "<cmd>GoIfErr<CR>",  {desc = "Golang Add errr snippet"})
 map("n", "<leader>aft", "<cmd>GoTestAdd<CR>",  {desc = "Golang Add one function test"})
 map("n", "<leader>ats", "<cmd>GoTestsAll<CR>",  {desc = "Golang Add all function tests"})
 
+-- debug
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>",  {desc = "Add breakpoint at line"})
+map("n", "<leader>dr", "<cmd>DapContinue<CR>",  {desc = "Run or continue the debugger"})
+
 --自动更新crates
 map("n", "<leader>ru",
 		function ()

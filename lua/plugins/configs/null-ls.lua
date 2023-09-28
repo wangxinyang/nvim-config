@@ -1,15 +1,22 @@
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+--[[ local biome = null_ls.builtins.formatting.rome.with({
+    command = "biome",
+}) ]]
 
 local opts = {
     sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.diagnostics.eslint,
+        -- null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.completion.spell,
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.golines,
+        null_ls.builtins.formatting.rome.with({
+            command = "biome",
+        }),
+
     },
     on_attach = function (client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -27,6 +34,10 @@ local opts = {
         end
     end,
 }
+
+--[[ opts.sources = vim.list_extend(opts.sources or {}, {
+    biome
+}) ]]
 
 return opts
 

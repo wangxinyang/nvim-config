@@ -88,4 +88,16 @@ lspconfig.gopls.setup (
     }
 )
 
+lspconfig.tsserver.setup (
+    {
+        init_options = {
+            preferences = {
+                disableSuggestions = true,
+            }
+        }
+    }
+)
+
+lspconfig.biome.setup ()
+
 return M
