@@ -155,11 +155,11 @@ map("n", "<leader>gas", "<cmd>GoTestsAll<CR>",  {desc = "Golang Add all function
 -- debug
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>",  {desc = "Add breakpoint at line"})
 map("n", "<leader>dr", "<cmd>DapContinue<CR>",  {desc = "Run or continue the debugger"})
-map("n", "<leader>ss", "<cmd>DapStepOver<CR>", {desc = "Step Over"})
-map("n", "<leader>si", "<cmd>DapStepOver<CR>", {desc = "Step Into"})
-map("n", "<leader>so", "<cmd>DapStepOver<CR>", {desc = "Step Out"})
-map("n", "<leader>sc", "<cmd>DapContinue<CR>", {desc = "Step Continue"})
-map("n", "<leader>st", "<cmd>DapTerminate<CR>", {desc = "Debug Terminate"})
+map("n", "<f7>", "<cmd>DapStepOver<CR>", {desc = "Step Over"})
+map("n", "<f8>", "<cmd>DapStepInto<CR>", {desc = "Step Into"})
+map("n", "<f9>", "<cmd>DapStepOut<CR>", {desc = "Step Out"})
+map("n", "<f10>", "<cmd>DapContinue<CR>", {desc = "Step Continue"})
+map("n", "<f11>", "<cmd>DapTerminate<CR>", {desc = "Debug Terminate"})
 
 -- debug go
 map("n", "<leader>gos",
