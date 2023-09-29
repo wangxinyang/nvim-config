@@ -35,6 +35,7 @@ return  {
                 "lua_ls",
                 "gopls",
                 "rust_analyzer",
+                "codelldb",
                 -- "eslint-lsp",
                 "typescript-language-server",
                 "biome",

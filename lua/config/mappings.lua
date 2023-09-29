@@ -160,8 +160,6 @@ map("n", "<f8>", "<cmd>DapStepInto<CR>", {desc = "Step Into"})
 map("n", "<f9>", "<cmd>DapStepOut<CR>", {desc = "Step Out"})
 map("n", "<f10>", "<cmd>DapContinue<CR>", {desc = "Step Continue"})
 map("n", "<f11>", "<cmd>DapTerminate<CR>", {desc = "Debug Terminate"})
-
--- debug go
 map("n", "<leader>gos",
 		function ()
             local widgets = require('dap.ui.widgets');
@@ -169,6 +167,8 @@ map("n", "<leader>gos",
             sidebar.open();
 		end,
     {desc = "Open debugger sidebar"})
+
+-- debug go
 map("n", "<leader>gdt",
 		function ()
             require('dap-go').debug_test()
