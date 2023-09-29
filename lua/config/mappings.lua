@@ -146,15 +146,40 @@ map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 map("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 
 -- golang quick keymap
-map("n", "<leader>taj", "<cmd>GoTagAdd json<CR>",  {desc = "Golang Tag Add json"})
-map("n", "<leader>tay", "<cmd>GoTagAdd yaml<CR>",  {desc = "Golang Tag Add yaml"})
-map("n", "<leader>ae", "<cmd>GoIfErr<CR>",  {desc = "Golang Add errr snippet"})
-map("n", "<leader>aft", "<cmd>GoTestAdd<CR>",  {desc = "Golang Add one function test"})
-map("n", "<leader>ats", "<cmd>GoTestsAll<CR>",  {desc = "Golang Add all function tests"})
+map("n", "<leader>gaj", "<cmd>GoTagAdd json<CR>",  {desc = "Golang Tag Add json"})
+map("n", "<leader>gay", "<cmd>GoTagAdd yaml<CR>",  {desc = "Golang Tag Add yaml"})
+map("n", "<leader>gae", "<cmd>GoIfErr<CR>",  {desc = "Golang Add errr snippet"})
+map("n", "<leader>gat", "<cmd>GoTestAdd<CR>",  {desc = "Golang Add one function test"})
+map("n", "<leader>gas", "<cmd>GoTestsAll<CR>",  {desc = "Golang Add all function tests"})
 
 -- debug
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>",  {desc = "Add breakpoint at line"})
 map("n", "<leader>dr", "<cmd>DapContinue<CR>",  {desc = "Run or continue the debugger"})
+map("n", "<leader>ss", "<cmd>DapStepOver<CR>", {desc = "Step Over"})
+map("n", "<leader>si", "<cmd>DapStepOver<CR>", {desc = "Step Into"})
+map("n", "<leader>so", "<cmd>DapStepOver<CR>", {desc = "Step Out"})
+map("n", "<leader>sc", "<cmd>DapContinue<CR>", {desc = "Step Continue"})
+map("n", "<leader>st", "<cmd>DapTerminate<CR>", {desc = "Debug Terminate"})
+
+-- debug go
+map("n", "<leader>gos",
+		function ()
+            local widgets = require('dap.ui.widgets');
+            local sidebar = widgets.sidebar(widgets.scopes);
+            sidebar.open();
+		end,
+    {desc = "Open debugger sidebar"})
+map("n", "<leader>gdt",
+		function ()
+            require('dap-go').debug_test()
+		end,
+    {desc = "Debug go test"})
+map("n", "<leader>gdl",
+		function ()
+            require('dap-go').debug_last_test()
+		end,
+    {desc = "Debug last go test"})
+
 
 --自动更新crates
 map("n", "<leader>ru",

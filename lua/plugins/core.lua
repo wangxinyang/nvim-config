@@ -63,6 +63,15 @@ return {
     },
     {
         event = "VeryLazy",
+        ft = "go",
+        "leoluz/nvim-dap-go",
+        dependencies = {"mfussenegger/nvim-dap"},
+        config = function (_, opts)
+            require("dap-go").setup(opts)
+        end
+    },
+    {
+        event = "VeryLazy",
         "rcarriga/nvim-dap-ui",
         dependencies = {"mfussenegger/nvim-dap"},
         config = function ()
