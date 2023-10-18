@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local indent = 4 
+local indent = 4
 
 -- utf8
 vim.g.encoding = "UTF-8"
@@ -17,7 +17,7 @@ vim.wo.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
-vim.wo.colorcolumn = "120"
+vim.wo.colorcolumn = "140"
 -- 缩进4个空格等于一个Tab
 vim.o.tabstop = indent
 vim.o.shiftwidth = indent
@@ -71,7 +71,7 @@ vim.opt.termguicolors = true
 -- 补全增强
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option('updatetime', 300)
 -- buffer line
 vim.opt.termguicolors = true
