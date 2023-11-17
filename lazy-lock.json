@@ -12,6 +12,7 @@
   "conflict-marker.vim": { "branch": "master", "commit": "11a4d42244755505b66b15cd4496a150432eb5e3" },
   "crates.nvim": { "branch": "main", "commit": "4ce7c51b881e58f1e2f8f437f30e4e583cbac319" },
   "dressing.nvim": { "branch": "master", "commit": "e6eff7a5a950a853c3903d906dbcea03f778db5f" },
+  "flutter-tools.nvim": { "branch": "main", "commit": "7350750d46fbeb4d2bb4878157b658d435935299" },
   "friendly-snippets": { "branch": "main", "commit": "c85153a188b260b908bc35ffedff64810a930b64" },
   "gitsigns.nvim": { "branch": "main", "commit": "addd6e174a85fc1c4007ab0b65d77e6555b417bf" },
   "gopher.nvim": { "branch": "main", "commit": "03cabf675ce129c28bd855969a3e569edcf63366" },
