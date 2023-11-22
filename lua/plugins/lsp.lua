@@ -1,4 +1,4 @@
-return  {
+return {
     {
         "folke/neodev.nvim",
         event = "VeryLazy",
@@ -20,7 +20,7 @@ return  {
         end
     },
     --  暂时不使用eslint，使用biome
---[[     {
+    --[[     {
         event = "VeryLazy",
         "mfussenegger/nvim-lint",
         config = function()

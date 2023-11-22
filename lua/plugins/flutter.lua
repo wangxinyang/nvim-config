@@ -1,6 +1,7 @@
 return {
     {
         lazy = false,
+        ft = "dart",
         "akinsho/flutter-tools.nvim",
         dependencies = {
             'nvim-lua/plenary.nvim',
@@ -8,11 +9,11 @@ return {
         }, --[[ config = function()
             require("plugins.configs.flutter-config").setup()
         end ]]
-        config = function()
+        --[[ config = function()
             require('flutter-tools').setup {
                 debugger = {
                     enabled = true,
-                    run_via_dap = false,
+                    run_via_dap = true,
                 },
                 outline = { auto_open = false },
                 decorations = {
@@ -32,6 +33,7 @@ return {
                     },
                     -- on_attach = require("plugins.configs.lspconfig").on_attach,
                     -- capabilities = require("plugins.configs.lspconfig").capabilities,
+                    -- on_attach =
                     capabilities = function(config)
                         config = vim.lsp.protocol.make_client_capabilities()
                         config.textDocument.completion.completionItem.snippetSupport = true
@@ -40,6 +42,12 @@ return {
                     end,
                 },
             }
+        end, ]]
+        opts = function()
+            return require 'plugins.configs.flutter-config'
         end,
+        config = function(_, opts)
+            require("flutter-tools").setup(opts)
+        end
     },
 }
